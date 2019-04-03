@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- It must config parameters -->
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://dap-cluster</value>
+    <description>The address of namenode for log-consumer to write.</description>
+  </property>
+  <property>
+    <name>consumer.id</name>
+    <value>${consumer.id}</value>
+    <description>The ID of consumer to consume.This id must unique at cluser.</description>
+  </property>
+  <property>
+    <name>zookeeper.address</name>
+    <value>localhost:2181</value>
+    <description>Zookeeper address</description>
+  </property>
+  <property>
+    <name>group.id</name>
+    <value>mingjiatest</value>
+    <description>The group of the consumer.</description>
+  </property>
+  <property>
+    <name>hdfs.log.root.path</name>
+    <value>/tmp/test_logconsumer/kafka</value>
+    <description>The root path of the log store at HDFS.</description>
+  </property>
+  
+  <!-- Default configuraion parameters-->
+  <property>
+    <name>http.port</name>
+    <value>18088</value>
+    <description>The webserver http port.</description>
+  </property>
+  <property>
+    <name>zookeeper.session.timeout.ms</name>
+    <value>16000</value>
+    <description>The number of millisecond for zookeeper connection timeout.</description>
+  </property>
+  <property>
+    <name>zookeeper.sync.time.ms</name>
+    <value>3000</value>
+    <description>The number of millisecond for zookeeper sync time.</description>
+  </property>
+  <property>
+    <name>auto.commit.interval.ms</name>
+    <value>2000</value>
+    <description>The number of millisecond for kafka auto commit time.</description>
+  </property>
+   <property>
+     <name>auto.offset.reset</name>
+     <value>largest</value>
+     <description>What to do when there is no initial offset in ZooKeeper or if an offset is out of range.</description>
+   </property>
+  <property>
+    <name>consumer.thread.pool.capacity</name>
+    <value>300</value>
+    <description>The capacity of the thread pool for consumer.</description>
+  </property>
+  <property>
+    <name>consumer.thread.count.per.topic</name>
+    <value>2</value>
+    <description>The consumer handler thread count for every topic</description>
+  </property>
+  <property>
+    <name>consumer.topic.check.interval</name>
+    <value>60</value>
+    <description>The Number of second for topic will check interval.</description>
+  </property>
+  <property>
+    <name>log.consumer.impl</name>
+    <value>com.zhangyue.consumer.impl.DefaultLogConsumer</value>
+    <description>The implementation class of log consumer.</description>
+  </property>
+    <property>
+        <name>topicfile.bakup.path</name>
+        <value>/tmp</value>
+        <description>The root path of the log store at local.</description>
+    </property>
+    <property>
+        <name>kafka-manager.zookeeper.address</name>
+        <value>localhost:2182</value>
+        <description>kafka-manager Zookeeper address</description>
+    </property>
+  <!-- 
+  <property>
+    <name>hdfs.buffer.size</name>
+    <value>10240</value>
+    <description>The buffer size of HDFS client write file(KB).</description>
+  </property>
+   -->
+  <property>
+    <name>dfs.support.append</name>
+    <value>true</value>
+    <description>It must support append for hdfs.</description>
+  </property>
+  <property>
+    <name>storage.adapter.impl</name>
+    <value>com.zhangyue.storage.impl.LocalFileAdapter</value>
+    <description>The implementation class of storage adapter.</description>
+  </property>
+  <property>
+    <name>storage.adapter.state.check.interval</name>
+    <value>60</value>
+    <description>The Number of second for adapter state will check interval.</description>
+  </property>
+</configuration>

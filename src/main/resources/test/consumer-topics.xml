@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topics>
+    <topic name="mingjia.test">
+        <consumerThreadCountForTopic>2</consumerThreadCountForTopic>
+        <isContainLineBreaks>false</isContainLineBreaks>
+    </topic>
+</topics>

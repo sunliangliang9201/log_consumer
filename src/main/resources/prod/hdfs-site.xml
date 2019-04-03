@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property>
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>dfs.data.dir</name>
+    <value>/opt/dn,/data1/dn,/data2/dn,/data3/dn</value>
+  </property>
+  <!-- federation -->
+  <property>
+    <name>dfs.nameservices</name>
+    <value>cluster</value>
+  </property>
+  <property>
+    <name>dfs.ha.namenodes.cluster</name>
+    <value>nn1,nn2</value>
+  </property>
+  <property>
+    <name>dfs.namenode.rpc-address.cluster.nn1</name>
+    <value>MASTER1:9000</value>
+  </property>
+  <property>
+    <name>dfs.namenode.rpc-address.cluster.nn2</name>
+    <value>MASTER2:9000</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address.cluster.nn1</name>
+    <value>103.26.158.31:50070</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-address.cluster.nn2</name>
+    <value>103.26.158.30:50070</value>
+  </property>
+  <property>
+    <name>dfs.namenode.shared.edits.dir</name>
+    <value>qjournal://SLAVE25:8485;SLAVE26:8485;SLAVE27:8485/cluster</value>
+  </property>
+  <property>
+    <name>ipc.client.connect.max.retries</name>
+    <value>100</value>
+  </property>
+  <property>
+    <name>dfs.ha.automatic-failover.enabled.cluster</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>dfs.client.failover.proxy.provider.cluster</name>
+    <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+  </property>
+
+  <property>
+    <name>dfs.ha.fencing.methods</name>
+    <value>sshfence</value>
+  </property>
+  <property>
+    <name>dfs.ha.fencing.ssh.private-key-files</name>
+    <value>/home/rsync/.ssh/id_rsa</value>
+  </property>
+
+  <property>
+    <name>dfs.journalnode.edits.dir</name>
+    <value>/opt/hadoop/tmp/journalnode</value>
+  </property>
+</configuration>

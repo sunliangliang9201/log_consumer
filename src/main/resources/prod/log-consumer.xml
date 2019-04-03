@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- It must config parameters -->
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://cluster</value>
+    <description>The address of namenode for log-consumer to write.</description>
+  </property>
+  <property>
+    <name>consumer.jdbc.drive</name>
+    <value>com.mysql.jdbc.Driver</value>
+    <description>The drive of db.</description>
+  </property>
+  <property>
+    <name>consumer.jdbc.url</name>
+    <value>jdbc:mysql://192.168.5.76:3306/dt_logmanager?useOldAliasMetadataBehavior=true</value>
+    <description>The url of db.</description>
+  </property>
+  <property>
+    <name>consumer.jdbc.username</name>
+    <value>dt_logmanager</value>
+    <description>The username of db.</description>
+  </property>
+  <property>
+    <name>consumer.jdbc.password</name>
+    <value>dt_logmanager123!@#</value>
+    <description>The password of db.</description>
+  </property>
+  <property>
+    <name>bootstrap.servers</name>
+    <value>192.168.5.194:9092,192.168.5.195:9092,192.168.5.196:9092,192.168.5.197:9092,192.168.5.198:9092,192.168.5.199:9092,192.168.5.200:9092</value>
+    <description>The kafka cluster address.</description>
+  </property>
+  <property>
+    <name>hdfs.write.retry</name>
+    <value>5</value>
+    <description>write to hdfs try count.</description>
+  </property>
+  <property>
+    <name>enable.auto.commit</name>
+    <value>true</value>
+    <description>auto commit</description>
+  </property>
+  <property>
+    <name>auto.commit.interval.ms</name>
+    <value>2000</value>
+    <description>The number of millisecond for kafka auto commit time.</description>
+  </property>
+  <property>
+    <name>auto.offset.reset</name>
+    <value>largest</value>
+    <description>What to do when there is no initial offset in ZooKeeper or if an offset is out of range.</description>
+  </property>
+  <property>
+    <name>session.timeout.ms</name>
+    <value>30000</value>
+    <description>kafka session timeout time.</description>
+  </property>
+  <property>
+    <name>request.timeout.ms</name>
+    <value>50000</value>
+    <description>kafka session timeout time.</description>
+  </property>
+  <property>
+    <name>max.partition.fetch.bytes</name>
+    <value>102400</value>
+    <description>kafka session timeout time.</description>
+  </property>
+  <property>
+    <name>heartbeat.interval.ms</name>
+    <value>8000</value>
+    <description>kafka session timeout time.</description>
+  </property>
+  <property>
+    <name>zookeeper.connect</name>
+    <value>192.168.5.64:2181,192.168.5.65:2181,192.168.5.66:2181</value>
+    <description>zookeeper address.</description>
+  </property>
+  <property>
+    <name>zookeeper.session.timeout.ms</name>
+    <value>15000</value>
+    <description>zookeeper timeout.</description>
+  </property>
+  <property>
+    <name>zookeeper.sync.time.ms</name>
+    <value>3000</value>
+    <description>zookeeper sync time.</description>
+  </property>
+
+  <!-- Default configuraion parameters-->
+  <property>
+    <name>consumer.meta.reload.interval</name>
+    <value>20</value>
+    <description>The topic manager reload interval.</description>
+  </property>
+  <property>
+    <name>http.port</name>
+    <value>18088</value>
+    <description>The webserver http port.</description>
+  </property>
+
+
+
+  <property>
+    <name>log.consumer.impl</name>
+    <value>com.baofeng.dt.asteroidea.comsumer.impl.DefaultLogConsumer</value>
+    <description>The implementation class of log consumer.</description>
+  </property>
+  <property>
+    <name>topicfile.bakup.path</name>
+    <value>/tmp</value>
+    <description>The root path of the log store at local.</description>
+  </property>
+  <!--
+  <property>
+    <name>hdfs.buffer.size</name>
+    <value>10240</value>
+    <description>The buffer size of HDFS client write file(KB).</description>
+  </property>
+   -->
+  <property>
+    <name>dfs.support.append</name>
+    <value>true</value>
+    <description>It must support append for hdfs.</description>
+  </property>
+
+  <property>
+    <name>storage.adapter.state.check.interval</name>
+    <value>60</value>
+    <description>The Number of second for adapter state will check interval.</description>
+  </property>
+</configuration>
